@@ -2,7 +2,7 @@
 # Script để test SearxNG API với API key
 
 API_KEY="sk-searxng-4f0158d9fc0a9750d55e338fef1092f0"
-SEARXNG_URL="http://localhost:8088"
+SEARXNG_URL="https://searxng.ttcorp.net"
 
 echo "=== Testing SearxNG API with API Key ==="
 echo ""
