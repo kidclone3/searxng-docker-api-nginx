@@ -32,10 +32,22 @@ server:
   base_url: false
   public_instance: false
 
-redis:
+valkey:
   url: redis://searxng-valkey:6379/0
 
-ui:
+# Disable các engine bị lỗi
+engines:
+  - name: ahmia
+    engine: ahmia
+    disabled: true
+  
+  - name: torch
+    engine: torch
+    disabled: true
+  
+  - name: wikidata
+    engine: wikidata
+    disabled: true
   static_use_hash: true
   default_locale: "en"
   query_in_title: false
@@ -45,6 +57,17 @@ ui:
   default_theme: simple
   theme_args:
     simple_style: auto
+
+# Disable các engine bị lỗi từ default settings
+engines:
+  - name: ahmia
+    disabled: true
+  
+  - name: torch
+    disabled: true
+  
+  - name: wikidata
+    disabled: true
 
 enabled_plugins:
   - 'Hash plugin'
@@ -73,10 +96,6 @@ engines:
   - name: github
     engine: github
     shortcut: gh
-
-  - name: stackoverflow
-    engine: stackoverflow
-    shortcut: so
 
   - name: youtube
     engine: youtube_noapi
