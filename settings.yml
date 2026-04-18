@@ -29,7 +29,7 @@ search:
 
 server:
   secret_key: "4f0158d9fc0a9750d55e338fef1092f078b11ee6b84d9139bf203dcd845b7602"
-  limiter: true
+  limiter: false
   image_proxy: true
   port: 8080
   bind_address: "0.0.0.0"
