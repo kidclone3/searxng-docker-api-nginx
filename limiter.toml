@@ -1,0 +1,25 @@
+# SearXNG Rate Limiter Configuration
+# Tắt hoặc nới lỏng rate limiting
+
+[botdetection.ip_limit]
+# Số request tối đa mỗi IP trong khoảng thời gian
+link_token = true
+filter_link = false
+
+# Tắt rate limit cho search
+[botdetection.ip_limit.search]
+window = 3600  # 1 giờ
+max_burst = 10000  # Cho phép 10000 requests trong 1 giờ
+ban_time = 0  # Không ban
+
+# Tắt rate limit cho JSON API
+[botdetection.ip_limit.json]
+window = 3600
+max_burst = 10000
+ban_time = 0
+
+# Tắt rate limit cho HTML
+[botdetection.ip_limit.html]
+window = 3600
+max_burst = 10000
+ban_time = 0
