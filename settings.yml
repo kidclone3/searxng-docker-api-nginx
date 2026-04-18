@@ -1,4 +1,15 @@
-use_default_settings: true
+use_default_settings:
+  engines:
+    keep_only:
+      - google
+      - bing
+      - duckduckgo
+      - wikipedia
+      - github
+      - youtube_noapi
+      - reddit
+      - arxiv
+      - openstreetmap
 
 general:
   debug: false
@@ -7,13 +18,6 @@ general:
   donation_url: false
   contact_url: false
   enable_metrics: false
-
-brand:
-  new_issue_url: https://github.com/searxng/searxng/issues/new
-  docs_url: https://docs.searxng.org
-  public_instances: https://searx.space
-  wiki_url: https://github.com/searxng/searxng/wiki
-  issue_url: https://github.com/searxng/searxng/issues
 
 search:
   safe_search: 0
@@ -30,80 +34,14 @@ server:
   port: 8080
   bind_address: "0.0.0.0"
   base_url: false
-  public_instance: false
 
 valkey:
   url: redis://searxng-valkey:6379/0
 
 ui:
   default_locale: "vi"
-  query_in_title: false
-  infinite_scroll: false
-  center_alignment: false
-  cache_url: https://web.archive.org/web/
-  default_theme: simple
-  theme_args:
-    simple_style: auto
-
-# Disable các engine bị lỗi từ default settings
-engines:
-  - name: ahmia
-    disabled: true
-  
-  - name: torch
-    disabled: true
-  
-  - name: wikidata
-    disabled: true
 
 enabled_plugins:
   - 'Hash plugin'
   - 'Self Information'
   - 'Tracker URL remover'
-
-engines:
-  - name: google
-    engine: google
-    shortcut: go
-    use_mobile_ui: false
-
-  - name: bing
-    engine: bing
-    shortcut: bi
-
-  - name: duckduckgo
-    engine: duckduckgo
-    shortcut: ddg
-
-  - name: wikipedia
-    engine: wikipedia
-    shortcut: wp
-    base_url: 'https://{language}.wikipedia.org/'
-
-  - name: github
-    engine: github
-    shortcut: gh
-
-  - name: youtube
-    engine: youtube_noapi
-    shortcut: yt
-
-  - name: reddit
-    engine: reddit
-    shortcut: re
-
-  - name: arxiv
-    engine: arxiv
-    shortcut: arx
-
-  - name: openstreetmap
-    engine: openstreetmap
-    shortcut: osm
-
-doi_resolvers:
-  oadoi.org: 'https://oadoi.org/'
-  doi.org: 'https://doi.org/'
-  doai.io: 'https://dissem.in/'
-  sci-hub.se: 'https://sci-hub.se/'
-
-default_doi_resolver: 'oadoi.org'
