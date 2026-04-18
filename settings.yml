@@ -37,6 +37,13 @@ valkey:
 
 ui:
   default_locale: "vi"
+  query_in_title: false
+  infinite_scroll: false
+  center_alignment: false
+  cache_url: https://web.archive.org/web/
+  default_theme: simple
+  theme_args:
+    simple_style: auto
 
 # Disable các engine bị lỗi từ default settings
 engines:
