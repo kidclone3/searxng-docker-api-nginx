@@ -35,28 +35,8 @@ server:
 valkey:
   url: redis://searxng-valkey:6379/0
 
-# Disable các engine bị lỗi
-engines:
-  - name: ahmia
-    engine: ahmia
-    disabled: true
-  
-  - name: torch
-    engine: torch
-    disabled: true
-  
-  - name: wikidata
-    engine: wikidata
-    disabled: true
-  static_use_hash: true
-  default_locale: "en"
-  query_in_title: false
-  infinite_scroll: false
-  center_alignment: false
-  cache_url: https://web.archive.org/web/
-  default_theme: simple
-  theme_args:
-    simple_style: auto
+ui:
+  default_locale: "vi"
 
 # Disable các engine bị lỗi từ default settings
 engines:
