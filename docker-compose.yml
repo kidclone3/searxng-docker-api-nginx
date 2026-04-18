@@ -11,7 +11,6 @@ services:
     volumes:
       - ./config/:/etc/searxng/:Z
       - ./settings.yml:/etc/searxng/settings.yml:ro
-      - ./limiter.toml:/etc/searxng/limiter.toml:ro
       - ./data/:/var/cache/searxng/
     networks:
       - searxng-net
