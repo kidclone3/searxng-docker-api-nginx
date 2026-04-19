@@ -13,9 +13,9 @@ ipv6_prefix = 48
 trusted_proxies = [
   '127.0.0.0/8',
   '::1',
-  # '192.168.0.0/16',
-  # '172.16.0.0/12',
-  # '10.0.0.0/8',
+  '192.168.0.0/16',
+  '172.16.0.0/12',
+  '10.0.0.0/8',
   # 'fd00::/8',
 ]
 
@@ -26,7 +26,8 @@ trusted_proxies = [
 filter_link_local = false
 
 # activate link_token method in the ip_limit method
-link_token = true
+# Set to false to disable rate limiting
+link_token = false
 
 [botdetection.ip_lists]
 
@@ -40,7 +41,10 @@ block_ip = [
 ]
 
 pass_ip = [
-  # '192.168.0.0/16',      # IPv4 private network
+  '192.168.0.0/16',      # IPv4 private network
+  '172.16.0.0/12',       # IPv4 private network
+  '10.0.0.0/8',          # IPv4 private network
+  '127.0.0.0/8',         # IPv4 localhost
   # 'fe80::/10'            # IPv6 linklocal / wins over botdetection.ip_limit.filter_link_local
 ]
 

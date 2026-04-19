@@ -400,6 +400,7 @@ engines:
   # Requires Tor
   - name: ahmia
     engine: ahmia
+    disabled: true
     # Might do up to two requests to perform a search.
     # Since Tor is already slow by nature, the timeout is set very high.
     timeout: 20.0
@@ -800,6 +801,7 @@ engines:
 
   - name: wikidata
     engine: wikidata
+    disabled: true
     shortcut: wd
     timeout: 3.0
     weight: 2
@@ -2074,6 +2076,7 @@ engines:
   # Requires Tor
   - name: torch
     engine: xpath
+    disabled: true
     paging: true
     search_url:
       http://xmh57jrknzkhv6y3ls3ubitzfqnkrwxhopf5aygthi7d6rplyvk3noyd.onion/cgi-bin/omega/omega?P={query}&DEFAULTOP=and

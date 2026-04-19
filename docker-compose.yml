@@ -10,7 +10,6 @@ services:
       - 8080
     volumes:
       - ./config/:/etc/searxng/:Z
-      - ./settings.yml:/etc/searxng/settings.yml:ro
       - ./data/:/var/cache/searxng/
     networks:
       - searxng-net
