@@ -36,8 +36,6 @@ services:
       - core
     networks:
       - searxng-net
-    environment:
-      - API_KEY=${SEARXNG_API_KEY:-your-secret-api-key-change-this}
 
 networks:
   searxng-net:
