@@ -804,6 +804,7 @@ engines:
 
   - name: wikidata
     engine: wikidata
+    inactive: true  # init crash: KeyError 'name' - disabled until upstream fix
     disabled: true
     shortcut: wd
     timeout: 3.0
@@ -1216,6 +1217,7 @@ engines:
     categories: [general, web]
     search_type: web
     shortcut: ka
+    disabled: true  # HTTP 403 from upstream API
 
   - name: karmasearch images
     engine: karmasearch
@@ -1223,18 +1225,21 @@ engines:
     search_type: images
     shortcut: kai
     paging: false
+    disabled: true  # HTTP 403 from upstream API
 
   - name: karmasearch videos
     engine: karmasearch
     categories: [general, web]
     search_type: videos
     shortcut: kav
+    disabled: true  # HTTP 403 from upstream API
 
   - name: karmasearch news
     engine: karmasearch
     categories: [news, web]
     search_type: news
     shortcut: kan
+    disabled: true  # HTTP 403 from upstream API
 
   - name: kickass
     engine: kickass
