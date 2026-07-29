@@ -1,2 +1,0 @@
-# Placeholder: original config/settings.yml.new moved to backups.
-# If you need the original full file, check the repository history or backups.
