@@ -1,8 +1,19 @@
 #!/bin/bash
 # Script để test SearxNG API với API key
+# Đọc API key từ .env (không hardcode trong script)
 
-API_KEY="sk-searxng-4f0158d9fc0a9750d55e338fef1092f0"
-SEARXNG_URL="http://127.0.0.1:8088"
+set -euo pipefail
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [[ ! -f "$SCRIPT_DIR/.env" ]]; then
+    echo "ERROR: .env not found. Run: cp .env.searxng.example .env  (or generate keys)"
+    exit 1
+fi
+
+# shellcheck disable=SC1091
+source "$SCRIPT_DIR/.env"
+API_KEY="${SEARXNG_API_KEY:?SEARXNG_API_KEY not set in .env}"
+SEARXNG_URL="${SEARXNG_URL:-http://127.0.0.1:8088}"
 
 echo "=== Testing SearxNG API with API Key ==="
 echo ""
@@ -27,7 +38,7 @@ echo ""
 # Test 3: API key không hợp lệ (should fail)
 echo "Test 3: Request with INVALID API key (should return 401)"
 curl -s -w "\nHTTP Status: %{http_code}\n" \
-  -H "X-API-Key: invalid-key-123" \
+  -H "X-API-Key: invalid-key-12345" \
   "${SEARXNG_URL}/search?q=test&format=json" | head -20
 echo ""
 echo "---"

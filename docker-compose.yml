@@ -5,6 +5,8 @@ services:
     container_name: searxng-core
     image: docker.io/searxng/searxng:latest
     restart: always
+    env_file:
+      - .env
     # Chỉ expose port nội bộ, không ra ngoài
     expose:
       - 8080
@@ -28,10 +30,12 @@ services:
     container_name: searxng-nginx
     image: nginx:alpine
     restart: always
+    env_file:
+      - .env
     ports:
       - 8088:80
     volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx.conf.template:/etc/nginx/templates/default.conf.template:ro
     depends_on:
       - core
     networks:

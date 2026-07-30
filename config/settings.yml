@@ -45,12 +45,12 @@ search:
     - rss
 
 server:
-  port: 8088
+  port: 8080
   bind_address: "0.0.0.0"
-  base_url: https://searxng.ttcorp.net
+  base_url: ""
   limiter: false
   public_instance: false
-  secret_key: "ZbYaae8zpTpp8W8z2qoGMS6OBExUADbS"
+  secret_key: "${SEARXNG_SECRET_KEY}"
   image_proxy: false
   http_protocol_version: "1.0"
   method: "GET"
